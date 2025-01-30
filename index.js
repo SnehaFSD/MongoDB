@@ -168,6 +168,15 @@ app.get('/products', (req, res) => {
 
   res.send(filteredProducts);  // Return the filtered products
 });
+//------------------------Add Products-----------------------------------------
+//-------------------------------------------------------------------------------
+  //to Add products
+  app.post('/products/',async  (req, res) =>  {
+    const newProducts = req.body
+    console.log(newProducts)
+    const result = await client.db("my-first-db").collection("products").insertMany(newProducts) 
+   res.send(result) 
+  })
 
    
 
