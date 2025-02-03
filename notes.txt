@@ -1,0 +1,20 @@
+let filteredProducts = products; // Start with all products//copy by reference
+
+  if (category) {
+    filteredProducts = filteredProducts.filter((pd) => pd.category === category);
+  }
+  if (rating) {
+    const numericRating = parseFloat(rating); // Convert rating to a number
+    filteredProducts = filteredProducts.filter((pd) => pd.rating === numericRating);
+  }
+-------------------------------------------------------
+  //to get all the products and catogory
+// app.get('/products', (req, res) => {
+//   const { category } = req.query;
+//   console.log(req.query, category);
+//   if (category) {
+//     const result = products.filter((pd) => pd.category === category);
+//     return res.send(result);
+//   }
+//   res.send(products); // Return all products if no category is provided
+// });
