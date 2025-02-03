@@ -3,6 +3,7 @@
 import express from "express"
 import { MongoClient } from "mongodb"
 import * as dotenv from 'dotenv'
+import cors from 'cors'
 import { productsRoute } from "./routes/Products.js"
 dotenv.config()
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT
 //Inbuilt middleware
 //Interceptor || converting body to JSON in POST and PUT methods
 app.use(express.json())
+app.use(cors())
 
 const MONGO_URL = process.env.MONGO_URL // this is atlas connection
 
